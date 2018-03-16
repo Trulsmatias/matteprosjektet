@@ -2,6 +2,7 @@ import scipy
 from scipy.sparse import spdiags
 from scipy.sparse import lil_matrix
 from scipy.sparse import csr_matrix
+import numpy
 
 def lag_a(n):
     e = scipy.ones(n)
@@ -13,7 +14,12 @@ def lag_a(n):
     A[0, 0: 4] = B[0, :]
     A[n - 2, n - 4:n] = B[1, :]
     A[n - 1, n - 4:n] = B[2, :]
-    return csr_matrix(A)
+    return numpy.matrix(A.toarray())  # dette ble endret slik at matriser lettere kunne bli ganget sammmen
 
 
-print(lag_a(6))
+"""
+m = numpy.identity(6)
+ta = lag_a(6)
+print(m * ta)
+#print(lag_a(6))
+"""
