@@ -1,7 +1,9 @@
 import numpy as np
 import oppgave_2
 
+
 storrelse_matrise = 10
+
 
 def y(x):
     w, d = 0.3, 0.03
@@ -29,5 +31,5 @@ A = oppgave_2.lag_a(storrelse_matrise)
 konst = 1/0.2**4
 a_1 = A * konst
 result = np.dot(a_1, ye)
-print("RESULTAT")
+print("Y FJERDE DERIVERTE")
 print(result)

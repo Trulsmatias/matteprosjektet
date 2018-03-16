@@ -1,4 +1,4 @@
-import oppgave_2
+from matteprosjektet import oppgave_2
 from scipy.sparse.linalg import spsolve
 
 
