@@ -1,5 +1,6 @@
 import oppgave_2
 import oppgave_3
+import numpy
 
 L = 2  # m. Lengden
 w = 0.3  # m
@@ -14,23 +15,18 @@ def y(x):
 
 
 def cond(matrise):  # har bestemt at skal bruke 1
-    import scipy
-    inv = scipy.linalg.inv(matrise)
-    norm_a = scipy.linalg.norm(matrise, 1)
-    norm_inv = scipy.linalg.norm(inv, 1)
-    return norm_a * norm_inv
+    return numpy.linalg.cond(matrise, 1)
 
 def tabell_over_feil_i_punktet():
-    i = 20
+    n = 20
     noyaktig = y(2)
-    print(cond(oppgave_2.lag_a(20)))
-    while(i <= 10*2**11):
-        numerisk = oppgave_3.regn_ut_alle_y(i)[-1]
-        print(numerisk)
-        print(noyaktig)
+
+    while(n <= 10*2**11):
+        print("kondisjonstall", cond(oppgave_2.lag_a(n)))
+        numerisk = oppgave_3.regn_ut_alle_y(n)[-1]
         print("Differanse", numerisk - noyaktig)
         print()
-        i *= 2
+        n *= 2
 
 
 tabell_over_feil_i_punktet()

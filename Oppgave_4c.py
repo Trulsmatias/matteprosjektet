@@ -29,5 +29,5 @@ A = oppgave_2.lag_a(storrelse_matrise)
 konst = 1/0.2**4
 a_1 = A * konst
 result = np.dot(a_1, ye)
-print("RESULTAT")
+print("y fjerdederivert")
 print(result)
