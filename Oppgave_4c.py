@@ -1,7 +1,9 @@
 import numpy as np
 import oppgave_2
 
+
 storrelse_matrise = 10
+
 
 def y(x):
     w, d = 0.3, 0.03
@@ -31,3 +33,4 @@ a_1 = A * konst
 result = np.dot(a_1, ye)
 print("y fjerdederivert")
 print(result)
+
