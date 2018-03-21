@@ -24,7 +24,7 @@ def lag_ye():
         x += 0.2
     return ye
 
-
+"""
 ye = lag_ye()
 print("Ye")
 print(ye, "\n")
@@ -34,4 +34,4 @@ a_1 = A * konst
 result = np.dot(a_1, ye)
 print("y fjerdederivert")
 print(result)
-
+"""

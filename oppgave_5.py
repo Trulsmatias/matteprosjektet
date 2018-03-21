@@ -26,12 +26,14 @@ def tabell_over_feil_i_punktet():
     n = 20 #Funker ikke under 6
     noyaktig = y(2)
 
-    while(n <= 10*2**11):
-        print("kondisjonstall", cond(oppgave_2.lag_a(n)))
+    while n <= 10*2**11:
+        if n < 10 * 2**10:  # dette er bare for at programmt ikke skal kjøre i en evighet
+            print("kondisjonstall", cond(oppgave_2.lag_a(n)))
         numerisk = oppgave_3.regn_ut_alle_y(n)[-1]
         print("Differanse", numerisk - noyaktig)
         print()
         n *= 2
 
-#Ta bort kommentaren under for å kjøre koden
-tabell_over_feil_i_punktet()
+
+#tabell_over_feil_i_punktet()
+

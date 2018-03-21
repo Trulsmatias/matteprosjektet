@@ -1,5 +1,7 @@
-import oppgave_2
+
+import oppgave_2  #dette må endres etter hvilken mappestruktur man har
 import numpy
+
 from scipy.sparse.linalg import spsolve
 
 '''
