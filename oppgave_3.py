@@ -22,8 +22,7 @@ def regn_ut_alle_y(n):  # n = antall
     konst = (h**4)/(E * I)
 
     b = [f * konst] * n  # baade f og konst er konstant
-
     return spsolve(A, b)  # y
 
 
-#print(regn_ut_alle_y(10))
+print("y: " , regn_ut_alle_y(10))

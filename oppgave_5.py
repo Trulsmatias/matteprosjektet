@@ -3,12 +3,17 @@ import oppgave_3
 import numpy
 from numpy.linalg import inv
 
-L = 2  # m. Lengden
-w = 0.3  # m
-d = 0.03  # m
-E = 1.3 * 10**10
-I = (w * d**3) / 12  # w * d**3 / 12. w = bredde
-f = -480 * w * d * 9.81  # f(x). g = 9.81. Er konstant siden det er lik vekt over hele objektet
+def vektor():
+    w = 0.3  # m
+    d = 0.03  # m
+    E = 1.3 * 10**10
+    I = (w * d**3) / 12
+    f = -480 * w * d * 9.81  #  g = 9.81. Er konstant siden det er lik vekt over hele objektet
+    return f/(E*I)
+
+print("vektoren: ", vektor()) # Får å få vektoren f/EI (1, 1, ... ,1)
+
+
 
 
 def y(x):
