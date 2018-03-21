@@ -18,7 +18,7 @@ def cond(matrise):  # har bestemt at skal bruke 1
     return numpy.linalg.cond(matrise, 1)
 
 def tabell_over_feil_i_punktet():
-    n = 20
+    n = 20 #Funker ikke under 6
     noyaktig = y(2)
 
     while(n <= 10*2**11):

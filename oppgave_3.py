@@ -1,6 +1,9 @@
-from matteprosjektet import oppgave_2
+import oppgave_2
 from scipy.sparse.linalg import spsolve
 
+'''
+Denne koden regner ut den eksakte løsningen for y(x) for en bjelke uten ekstra masse enn egenmassen
+'''
 
 L = 2  # m. Lengden
 w = 0.3  # m
