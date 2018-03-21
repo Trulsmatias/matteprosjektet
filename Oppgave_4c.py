@@ -3,6 +3,7 @@ import oppgave_2
 
 
 storrelse_matrise = 10
+np.set_printoptions(precision=20)
 
 
 def y(x):
@@ -28,7 +29,7 @@ ye = lag_ye()
 print("Ye")
 print(ye, "\n")
 A = oppgave_2.lag_a(storrelse_matrise)
-konst = 1/0.2**4
+konst = 1/0.2**4 #1/h^4
 a_1 = A * konst
 result = np.dot(a_1, ye)
 print("y fjerdederivert")

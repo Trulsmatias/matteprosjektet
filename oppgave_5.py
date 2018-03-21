@@ -1,6 +1,7 @@
 import oppgave_2
 import oppgave_3
 import numpy
+from numpy.linalg import inv
 
 L = 2  # m. Lengden
 w = 0.3  # m
@@ -14,11 +15,15 @@ def y(x):
     return (f/(24 * E * I)) * x**2 * (x**2 - 4*L*x + 6*L**2)
 
 
-def cond(matrise):  # har bestemt at skal bruke 1
-    return numpy.linalg.cond(matrise, 1)
+def cond(matrise):  # har bestemt at skal bruke 1, altså summen av kolonnen som gir størst sum når summert
+    return numpy.linalg.cond(matrise, numpy.inf)
+
+def condTungvint(matrise):
+    matriseInv = inv(matrise)
+    return numpy.dot(numpy.linalg.norm(matrise,numpy.inf),numpy.linalg.norm(matriseInv,numpy.inf))
 
 def tabell_over_feil_i_punktet():
-    n = 20
+    n = 20 #Funker ikke under 6
     noyaktig = y(2)
 
     while n <= 10*2**11:
