@@ -34,4 +34,4 @@ def tabell_over_feil_i_punktet():
         n *= 2
 
 #Ta bort kommentaren under for å kjøre koden
-#tabell_over_feil_i_punktet()
+tabell_over_feil_i_punktet()

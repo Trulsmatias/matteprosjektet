@@ -1,9 +1,12 @@
 import oppgave_2
+import numpy
 from scipy.sparse.linalg import spsolve
 
 '''
 Denne koden regner ut den eksakte løsningen for y(x) for en bjelke uten ekstra masse enn egenmassen
 '''
+
+numpy.set_printoptions(precision=14)
 
 L = 2  # m. Lengden
 w = 0.3  # m
@@ -25,4 +28,4 @@ def regn_ut_alle_y(n):  # n = antall
     return spsolve(A, b)  # y
 
 
-#print(regn_ut_alle_y(10))
+print(regn_ut_alle_y(10))
