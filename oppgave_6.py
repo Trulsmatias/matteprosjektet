@@ -54,7 +54,7 @@ def tabell_over_feil_i_punktet():
         liste_numerisk.append(numer)
         liste_noyaktig.append(noyak)
         liste_differanse.append(abs(noyak - numer))
-        # liste_kondisjonstall.append(cond(oppgave_2.lag_a(n)))
+        # liste_kondisjonstall.append(cond(oppgave_2.lag_a(n)))  # kommenteres ut hvis mulig. Tar mye tid ved store tall
         delinger.append(n)
         n *= 2
         i += 1
@@ -72,7 +72,7 @@ def oppgave_b(num, noy, delinger):
     pl.plot(delinger, num, label="numerisk tilnærming")
     pl.plot(delinger, noy, label="nøyaktig verdi")
     pl.xscale("log")
-    pl.ylabel("forskyvning y(l)")
+    pl.ylabel("forskyvning i x = L")
     vis_graf(pl, "oppgave b")
 
 def oppgave_c(differ, delinger):
@@ -116,4 +116,4 @@ oppgave_b(numerisk, noyaktig, ant_deling)  # denne oppgaven trenger ikke kondisj
 # Linjen som regner ut kondisjonstall i tabell_over_feil_i_punktet() kan derfor kommenteres ut
 # for å faa kjoretiden betraktelig ned
 # oppgave_c(differanse, ant_deling)
-#oppgave_d(kondisjonstall, differanse, ant_deling)
+# oppgave_d(kondisjonstall, differanse, ant_deling)

@@ -1,5 +1,8 @@
 import oppgave_2
 from scipy.sparse.linalg import spsolve
+import matplotlib.pyplot as plt
+import numpy
+
 
 
 L = 2  # m
@@ -32,15 +35,27 @@ def regn_ut_yene(n):  # n = antall deler stupebrettet er delt i
     return spsolve(A, b)
 
 def finn_boyingen():
-    n = 20  # antall deler vi har delt stupebrettet i
-    liste_boying = []
+    n = 2560  # SJEKK TALLET! Antall deler vi har delt stupebrettet i. Tallet er valgt fordi det ga størst nøyaktighet i oppgave 6
+    t = 1
+    delingsverdier = []
+    while t <= 10 * 2**8:
+        # skal ha alle verdiene for hvor delene er
+        delingsverdier.append(t)
+        t += 1
 
-    while n <= 10 * 2**11:
-        print(n)
-        liste_boying.append(regn_ut_yene(n)[-1])
-        n *= 2
+    return regn_ut_yene(n), delingsverdier
 
-    return liste_boying
+def lag_graf(verdier, ner):
+    print(ner)
+    plott = numpy.array(verdier)
+    plt.plot(ner, -plott, label="Bøyningen til stupebrettet ved n = 2560")
+    plt.ylabel("Bøyningen til stupebrettet")
+    plt.xlabel("Punktet på stupebrettet")
+    plt.title("oppgave 7")
+    plt.legend()
+    plt.show()
 
 
-print(finn_boyingen())
+verdier, ner = finn_boyingen()
+print(verdier)
+lag_graf(verdier, ner)
