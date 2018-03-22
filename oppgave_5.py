@@ -20,7 +20,7 @@ def cond(matrise):  # har bestemt at skal bruke 1, altså summen av kolonnen som
 
 def condTungvint(matrise):
     matriseInv = inv(matrise)
-    return numpy.dot(numpy.linalg.norm(matrise,numpy.inf),numpy.linalg.norm(matriseInv,numpy.inf))
+    return numpy.dot(numpy.linalg.norm(matrise, numpy.inf), numpy.linalg.norm(matriseInv, numpy.inf))
 
 def tabell_over_feil_i_punktet():
     n = 20 #Funker ikke under 6
@@ -35,4 +35,4 @@ def tabell_over_feil_i_punktet():
         n *= 2
 
 
-#tabell_over_feil_i_punktet()
+tabell_over_feil_i_punktet()
