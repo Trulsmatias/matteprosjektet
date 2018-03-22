@@ -1,19 +1,19 @@
-import oppgave_2  # dette må endres etter hvilken mappestruktur man har
+
+import oppgave_2  #dette må endres etter hvilken mappestruktur man har
+import numpy
 
 from scipy.sparse.linalg import spsolve
 
-'''
-Denne koden regner ut den eksakte løsningen for y(x) for en bjelke uten ekstra masse enn egenmassen
-'''
+numpy.set_printoptions(precision=14)
 
 L = 2  # m. Lengden
-w = 0.3  # m
-d = 0.03  # m
-E = 1.3 * 10**10
-I = (w * d**3) / 12  # w * d**3 / 12. w = bredde
+w = 0.3  # bredde
+d = 0.03  # tykkelse
+E = 1.3 * 10**10 # Konstant
+I = (w * d**3) / 12  # w * d**3 / 12. w = bredde. Konstant
 f = -480 * w * d * 9.81  # f(x). g = 9.81. Er konstant siden det er lik vekt over hele objektet
 
-
+#
 def regn_ut_alle_y(n):  # n = antall
     # lager matrisen og regner ut h
     A = oppgave_2.lag_a(n)
@@ -25,4 +25,4 @@ def regn_ut_alle_y(n):  # n = antall
     return spsolve(A, b)  # y
 
 
-print("y: " , regn_ut_alle_y(10))
+print("y: " , regn_ut_alle_y(10)) #10 er n, som er matrisens lengde og bredde, som da blir antall ligninger som skal l�ses

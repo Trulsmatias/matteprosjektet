@@ -24,22 +24,21 @@ def y(x):
 
 
 def cond(matrise):  # har bestemt at skal bruke 1, altså summen av kolonnen som gir størst sum når summert
-    return numpy.linalg.cond(matrise, numpy.inf)
+    return numpy.linalg.cond(matrise, 1)
 
 
-def condTungvint(matrise):
+def condTungvint(matrise): #Brukte denne til å teste om cond-funksjonen fungerer.
     matriseInv = inv(matrise)
-    return numpy.dot(numpy.linalg.norm(matrise, numpy.inf), numpy.linalg.norm(matriseInv, numpy.inf))
-
+    return numpy.dot(numpy.linalg.norm(matrise,1),numpy.linalg.norm(matriseInv,1))
 
 def tabell_over_feil_i_punktet():
     n = 20 #Funker ikke under 6
     noyaktig = y(2)
     while n <= 10*2**11:
         if n < 10 * 2**10:  # dette er bare for at programmt ikke skal kjøre i en evighet
-            print("kondisjonstall", cond(oppgave_2.lag_a(n)))
-        numerisk = oppgave_3.regn_ut_alle_y(n)[-1]
-        print("Differanse", numerisk - noyaktig)
+            print(n,"kondisjonstall", cond(oppgave_2.lag_a(n)))
+        numerisk = oppgave_3.regn_ut_alle_y(n)[-1] #[-1] er siste element i tabellen, altså y(L)
+        print(n,"Differanse", numerisk - noyaktig)
         print()
         n *= 2
 
