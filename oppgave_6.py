@@ -63,7 +63,6 @@ def tabell_over_feil_i_punktet():
 
 def vis_graf(plt, tittel):
     plt.xlabel("antall delinger")
-    plt.ylabel("faktiske verdier")
     plt.title(tittel)
     plt.legend()
     plt.show()
@@ -72,12 +71,15 @@ def vis_graf(plt, tittel):
 def oppgave_b(num, noy, delinger):
     pl.plot(delinger, num, label="numerisk tilnærming")
     pl.plot(delinger, noy, label="nøyaktig verdi")
+    pl.xscale("log")
+    pl.ylabel("forskyvning y(l)")
     vis_graf(pl, "oppgave b")
 
 def oppgave_c(differ, delinger):
     pl.yscale("log")
     pl.xscale("log")
     pl.plot(delinger, differ, label="differanse")
+    pl.ylabel("feilen for y_n")
     vis_graf(pl, "oppgave c")
 
 def oppgave_d(kond, differ, delinger):
@@ -93,6 +95,7 @@ def oppgave_d(kond, differ, delinger):
     pl.plot(delinger, differ, label="differanse")  # fra c)
     pl.plot(delinger, kond_emach, label="cond(A) * e_mach")  # nytt i denne oppgaven
     pl.plot(delinger, h_liste, label="h^2-verdi")  # nytt i denne oppgaven
+    pl.ylabel("feilen for y_n")
     vis_graf(pl, "oppgave d")
 
 
@@ -109,8 +112,8 @@ print(kondisjonstall, "\n")
 print("n-ene")
 print(ant_deling, "\n")
 
-#oppgave_b(numerisk, noyaktig, ant_deling)  # denne oppgaven trenger ikke kondisjonstall.
+oppgave_b(numerisk, noyaktig, ant_deling)  # denne oppgaven trenger ikke kondisjonstall.
 # Linjen som regner ut kondisjonstall i tabell_over_feil_i_punktet() kan derfor kommenteres ut
 # for å faa kjoretiden betraktelig ned
-oppgave_c(differanse, ant_deling)
+# oppgave_c(differanse, ant_deling)
 #oppgave_d(kondisjonstall, differanse, ant_deling)
