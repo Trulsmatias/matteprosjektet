@@ -11,11 +11,12 @@ I = (w * d**3) / 12
 f = -480 * w * d * 9.81  #  g = 9.81. Er konstant siden det er lik vekt over hele objektet
 
 
+# Får å få vektoren f/EI (1, 1, ... ,1)
 def vektor():
     return f/(E*I)
 
 
-print("vektoren: ", vektor()) # Får å få vektoren f/EI (1, 1, ... ,1)
+print("vektoren: ", vektor())
 
 
 def y(x):
